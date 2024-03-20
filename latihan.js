@@ -39,3 +39,4 @@ console.log (benda);
 let aku = "makan";
 let moreaku = aku + aku ;
 console.log(moreaku);
+
