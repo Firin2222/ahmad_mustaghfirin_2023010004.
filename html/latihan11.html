@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else Program</title>
+</head>
+<body>
+    <h1>If Else Program</h1>
+    <label for="number">Masukkan sebuah angka:</label>
+    <input type="number" id="numberInput">
+    <button onclick="checkNumber()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            // Mendapatkan nilai dari input
+            var number = parseInt(document.getElementById('numberInput').value);
+            var resultMessage;
+
+            // Melakukan pengecekan menggunakan if-else
+            if (isNaN(number)) {
+                resultMessage = "Mohon masukkan angka yang valid!";
+            } else {
+                if (number > 0) {
+                    resultMessage = "Angka yang dimasukkan adalah positif.";
+                } else if (number < 0) {
+                    resultMessage = "Angka yang dimasukkan adalah negatif.";
+                } else {
+                    resultMessage = "Angka yang dimasukkan adalah nol.";
+                }
+            }
+
+            // Menampilkan hasil
+            document.getElementById('result').innerHTML = resultMessage;
+        }
+    </script>
+</body>
+</html>
