@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for of looping</title>
+</head>
+<body>
+<h1>for of looping</h1>
+<ul id="daftarTeman">
+    <!-- Nama teman-teman akan ditambahkan di sini -->
+  </ul>
+<script>
+    var temanSekelas = ["Teman 1", "Teman 2", "Teman 3", "Teman 4", "Teman 5"];
+
+// Mengambil elemen ul dengan id "daftarTeman"
+var daftarTeman = document.getElementById("daftarTeman");
+
+// Menambahkan nama teman-teman ke dalam daftar
+for (var i = 0; i < temanSekelas.length; i++) {
+  var li = document.createElement("li"); // Membuat elemen li baru
+  li.textContent = temanSekelas[i]; // Menambahkan teks nama teman ke dalam li
+  daftarTeman.appendChild(li); // Menambahkan li ke dalam ul
+}
+
+</script>
+
+</body>
+</html>

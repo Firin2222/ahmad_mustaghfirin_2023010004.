@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Truthy atau Falsy</title>
+</head>
+<body>
+<h1>Truthy atau Falsy</h1>
+
+<script>
+function cekTruthyFalsy(nilai) {
+    if (nilai) {
+        return "Truthy";
+    } else {
+        return "Falsy";
+    }
+}
+
+// Contoh penggunaan
+var contohNilai1 = 10;
+var contohNilai2 = '';
+
+
+document.write("Nilai " + contohNilai1 + " adalah " + cekTruthyFalsy(contohNilai1) + "<br>");
+document.write("Nilai '" + contohNilai2 + "' adalah " + cekTruthyFalsy(contohNilai2) + "<br>");
+
+</script>
+
+</body>
+</html>

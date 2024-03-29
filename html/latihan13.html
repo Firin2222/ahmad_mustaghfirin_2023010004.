@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switch dengan 7 Case</title>
+</head>
+<body>
+<h1>Switch dengan 7 Case</h1>
+
+<script>
+function tampilkanHari(hari) {
+    var namaHari;
+
+    switch (hari) {
+        case 1:
+            namaHari = "Minggu";
+            break;
+        case 2:
+            namaHari = "Senin";
+            break;
+        case 3:
+            namaHari = "Selasa";
+            break;
+        case 4:
+            namaHari = "Rabu";
+            break;
+        case 5:
+            namaHari = "Kamis";
+            break;
+        case 6:
+            namaHari = "Jumat";
+            break;
+        case 7:
+            namaHari = "Sabtu";
+            break;
+        default:
+            namaHari = "Hari tidak valid";
+    }
+
+    document.write("Hari ke-" + hari + " adalah " + namaHari + "<br>");
+}
+
+// Contoh penggunaan
+tampilkanHari(1);
+tampilkanHari(3);
+tampilkanHari(6);
+tampilkanHari(8); // Ini akan menampilkan "Hari tidak valid"
+</script>
+
+</body>
+</html>

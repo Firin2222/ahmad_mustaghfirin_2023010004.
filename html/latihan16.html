@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menampilkan Nama dengan Nomor</title>
+</head>
+<body>
+<h1>Menampilkan Nama dengan Nomor</h1>
+
+
+<h2>Perulangan Do-While</h2>
+<ul id="daftarNamaDoWhile">
+  <!-- Nama Anda disertai nomor akan ditampilkan di sini -->
+</ul>
+
+<script>
+var namaAnda = "Nama Anda";
+var nomorDoWhile = 1;
+var daftarNamaDoWhile = document.getElementById("daftarNamaDoWhile");
+
+// Menggunakan perulangan do-while
+do {
+  var li = document.createElement("li");
+  li.textContent = namaAnda + " - " + nomorDoWhile;
+  daftarNamaDoWhile.appendChild(li);
+  nomorDoWhile++;
+} while (nomorDoWhile <= 25);
+</script>
+
+</body>
+</html>
