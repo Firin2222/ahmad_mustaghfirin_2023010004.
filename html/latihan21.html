@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Teman dan Hobi</title>
+</head>
+<body>
+    <h1>Data Teman dan Hobi</h1>
+
+    <!-- Form untuk menambah data -->
+    <form id="addForm">
+        <label for="name">Nama Teman:</label>
+        <input type="text" id="name" required>
+        <label for="hobby">Hobi:</label>
+        <input type="text" id="hobby" required>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <!-- Daftar Teman dan Hobi -->
+    <ul id="dataList"></ul>
+
+    <script>
+        // Array data nama teman
+        var friends = ["Teman 1", "Teman 2", "Teman 3"];
+
+        // Array data hobi
+        var hobbies = ["Hobi 1", "Hobi 2", "Hobi 3"];
+
+        // Function to display data
+        function displayData() {
+            var dataList = document.getElementById("dataList");
+            dataList.innerHTML = ""; // Clear existing list items
+
+            // Loop through friends array and display each friend and their hobby
+            for (var i = 0; i < friends.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.textContent = friends[i] + " - " + hobbies[i];
+
+                // Button to remove friend and hobby
+                var removeButton = document.createElement("button");
+                removeButton.textContent = "Hapus";
+                removeButton.setAttribute("data-index", i);
+                removeButton.onclick = function() {
+                    var index = parseInt(this.getAttribute("data-index"));
+                    friends.splice(index, 1);
+                    hobbies.splice(index, 1);
+                    displayData();
+                };
+
+                listItem.appendChild(removeButton);
+                dataList.appendChild(listItem);
+            }
+        }
+
+        // Function to add data
+        document.getElementById("addForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var nameInput = document.getElementById("name");
+            var hobbyInput = document.getElementById("hobby");
+
+            var name = nameInput.value.trim();
+            var hobby = hobbyInput.value.trim();
+
+            if (name !== "" && hobby !== "") {
+                friends.push(name);
+                hobbies.push(hobby);
+                displayData();
+                nameInput.value = "";
+                hobbyInput.value = "";
+            }
+        });
+
+        // Initial display of data
+        displayData();
+    </script>
+</body>
+</html>

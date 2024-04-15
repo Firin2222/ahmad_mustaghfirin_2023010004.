@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Array dengan Spread Operator</title>
+</head>
+<body>
+    <h1>Data Array dengan Spread Operator</h1>
+
+    <div id="app">
+        <ul>
+            <!-- Data array akan ditampilkan di sini -->
+        </ul>
+    </div>
+
+    <script>
+        // Array data
+        const dataArray = ["Data 1", "Data 2", "Data 3", "Data 4", "Data 5"];
+
+        // Menggunakan spread operator untuk menampilkan data array di dalam elemen ul
+        const app = document.getElementById("app");
+        const ul = document.createElement("ul");
+
+        // Menambahkan setiap item array ke dalam elemen ul menggunakan spread operator
+        [...dataArray].forEach(data => {
+            const li = document.createElement("li");
+            li.textContent = data;
+            ul.appendChild(li);
+        });
+
+        app.appendChild(ul);
+    </script>
+</body>
+</html>

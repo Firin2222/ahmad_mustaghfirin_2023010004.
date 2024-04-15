@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Array dengan Spread Operator</title>
+</head>
+<body>
+    <h1>Data Array dengan Spread Operator</h1>
+
+    <div id="app">
+        <ul>
+            <!-- Data array yang digabungkan akan ditampilkan di sini -->
+        </ul>
+    </div>
+
+    <script>
+        // Dua array data
+        const array1 = ["Data 1", "Data 2", "Data 3"];
+        const array2 = ["Data 4", "Data 5", "Data 6"];
+
+        // Menggabungkan dua array menggunakan spread operator
+        const combinedArray = [...array1, ...array2];
+
+        // Menampilkan data array yang digabungkan di dalam elemen ul
+        const app = document.getElementById("app");
+        const ul = document.createElement("ul");
+
+        // Menambahkan setiap item dari array yang digabungkan ke dalam elemen ul
+        combinedArray.forEach(data => {
+            const li = document.createElement("li");
+            li.textContent = data;
+            ul.appendChild(li);
+        });
+
+        app.appendChild(ul);
+    </script>
+</body>
+</html>

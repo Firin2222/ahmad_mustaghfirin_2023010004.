@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Teman dan Hobi</title>
+</head>
+<body>
+    <h1>Data Teman dan Hobi</h1>
+
+    <!-- Form untuk menambah data -->
+    <form id="addForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" required>
+        <label for="name">Kode Member:</label>
+        <input type="text" id="Kode Member" required>
+        <label for="hobby">Barang:</label>
+        <input type="text" id="Barang" required>
+        <button type="submit">Beli</button>
+    </form>
+
+    <!-- Daftar Teman dan Hobi -->
+    <ul id="dataList"></ul>
+
+    <script>
+        // Array data nama teman
+        var namebarang = ["Samsung Galaxy S21", "iPhone 13", "Xiaomi Mi 11","Google Pixel 6"];
+
+        // Array data hobi
+        var hargabarang = ["15000000", "20000000", "10000000","18000000"];
+
+        // Function to display data
+        function displayData() {
+            var dataList = document.getElementById("dataList");
+            dataList.innerHTML = ""; // Clear existing list items
+
+            // Loop through friends array and display each friend and their hobby
+            for (var i = 0; i < namebarang.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.textContent = namebarang[i] + " - " + hargabarang[i];
+
+                // Button to remove friend and hobby
+                var removeButton = document.createElement("button");
+                removeButton.textContent = "Hapus";
+                removeButton.setAttribute("data-index", i);
+                removeButton.onclick = function() {
+                    var index = parseInt(this.getAttribute("data-index"));
+                    nama.splice(index, 1);
+                    barang.splice(index, 1);
+                    displayData();
+                };
+
+                listItem.appendChild(removeButton);
+                dataList.appendChild(listItem);
+            }
+        }
+
+        // Function to add data
+        document.getElementById("addForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var nameInput = document.getElementById("name");
+            var barangInput = document.getElementById("hobby");
+
+            var name = nameInput.value.trim();
+            var barang = barangInput.value.trim();
+
+            if (name !== "" && barang !== "") {
+                friends.push(name);
+                hobbies.push(barang);
+                displayData();
+                nameInput.value = "";
+                barangInput.value = "";
+            }
+        });
+
+        // Initial display of data
+        displayData();
+    </script>
+</body>
+</html>

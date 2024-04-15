@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Array</title>
+</head>
+<body>
+    <h1>Data Array</h1>
+    <ul id="dataList"></ul>
+
+    <script>
+        // Data array
+        var dataArray = ["Data 1", "Data 2", "Data 3", "Data 4", "Data 5"];
+
+        // Function to display data array
+        function displayData() {
+            var dataList = document.getElementById("dataList");
+            dataList.innerHTML = ""; // Clear existing list items
+
+            // Loop through the array and create list items
+            for (var i = 0; i < dataArray.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.textContent = dataArray[i];
+                dataList.appendChild(listItem);
+            }
+        }
+
+        // Call the function to display data when the page loads
+        window.onload = displayData;
+    </script>
+</body>
+</html>

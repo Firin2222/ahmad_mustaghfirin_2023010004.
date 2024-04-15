@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Store</title>
+</head>
+<body>
+    <h1>Gadget Store</h1>
+    <div id="output"></div>
+    
+    <script>
+        // Function to get the amount of products to be purchased
+        function getProductAmount(products) {
+            let listProductAmount = {};
+            for (let product of products) {
+                let name = product[0];
+                let amount = product[1];
+                listProductAmount[name] = amount;
+            }
+            return listProductAmount;
+        }
+
+        // Function to get the total price of all products to be purchased
+        function getTotalPrice(listProductAmount) {
+            let totalPrice = 0;
+            for (let product in listProductAmount) {
+                totalPrice += listProductAmount[product];
+            }
+            return totalPrice;
+        }
+
+        // Function to get discount if the customer is a member of Gadget Store
+        function getDiscount(statusMember, totalPrice) {
+            if (statusMember) {
+                return totalPrice * 0.9; // 10% discount for members
+            } else {
+                return totalPrice;
+            }
+        }
+
+        // Main function to generate the desired output
+        function shoppingAtGadgetStore(customer) {
+            let products = customer.products;
+            let listProductAmount = getProductAmount(products);
+            let totalPrice = getTotalPrice(listProductAmount);
+
+            // Getting discount if the customer is a member
+            let totalPriceAfterDiscount = getDiscount(customer.isMember, totalPrice);
+
+            // Format output
+            if (customer.isMember) {
+                return `Hai pelanggan setia ${customer.name}! Total Harga yang harus kamu bayar adalah Rp ${totalPriceAfterDiscount}`;
+            } else {
+                return `Hai ${customer.name}! Total Harga yang harus kamu bayar adalah Rp ${totalPriceAfterDiscount}`;
+            }
+        }
+
+        // Example of calling the shoppingAtGadgetStore function
+        const customer = {
+            name: "Ahmad Mustaghfirin",
+            isMember: true,
+            products: [
+                ["Samsung Galaxy S21", 15000000],
+                ["iPhone 13", 20000000],
+                ["Xiaomi Mi 11", 10000000],
+                ["Google Pixel 6", 18000000]
+            ]
+        };
+
+        // Displaying the result on the web page
+        const outputDiv = document.getElementById("output");
+        const result = shoppingAtGadgetStore(customer);
+        outputDiv.textContent = result;
+    </script>
+</body>
+</html>
