@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For...of Statement</title>
+</head>
+<body>
+    <h1>For...of Statement</h1>
+    <p id="demo"></p>
+
+    <script>
+        // Array of fruits
+        var buah = ["rambutan", "pisang", "semangka", "Mangga", "durian"];
+        
+        // Initialize text
+        var text = "";
+        
+        // For...of loop to iterate through the array
+        for (var buah of buah) {
+            text += "Buah "+buah + "<br>";
+        }
+        
+        // Display the result in the element with id "demo"
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>

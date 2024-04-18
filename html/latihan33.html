@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labeled Statement</title>
+</head>
+<body>
+    <h1>Labeled Statement</h1>
+    <p id="demo"></p>
+
+    <script>
+        // Inisialisasi variabel
+        var text = "";
+
+        // Label statement
+        outerLoop: for (var i = 0; i < 3; i++) {
+            innerLoop: for (var j = 0; j < 3; j++) {
+                // Jika nilai i dan j sama dengan 1, lanjutkan ke iterasi berikutnya dari outerLoop
+                if (i === 1 && j === 1) {
+                    continue outerLoop;
+                }
+                text += "i=" + i + ", j=" + j + "<br>";
+            }
+        }
+
+        // Menampilkan hasil di dalam elemen dengan id "demo"
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>

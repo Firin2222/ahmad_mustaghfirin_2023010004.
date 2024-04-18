@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For...in Statement</title>
+</head>
+<body>
+    <h1>For...in Statement</h1>
+    <p id="demo"></p>
+
+    <script>
+        // Object containing information about a person
+        var data = {
+            name: "John",
+            age: 30,
+            profession: "Developer",
+            country: "USA"
+        };
+
+        // Initialize text
+        var text = "";
+
+        // For...in loop to iterate through the properties of the object
+        for (var key in data) {
+            text += key + ": " + daata[key] + "<br>";
+        }
+
+        // Display the result in the element with id "demo"
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Statement</title>
+</head>
+<body>
+    <h1>Break Statement</h1>
+    <p id="demo"></p>
+
+    <script>
+        // Inisialisasi variabel
+        var text = "";
+
+        // For loop
+        for (var i = 0; i < 10; i++) {
+            // Jika nilai i mencapai 5, break statement akan menghentikan loop
+            if (i === 5) {
+                break;
+            }
+            text += "Nomor " + i + "<br>";
+        }
+
+        // Menampilkan hasil di dalam elemen dengan id "demo"
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
