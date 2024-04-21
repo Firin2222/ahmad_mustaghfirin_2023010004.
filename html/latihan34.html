@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Execution Context Example</title>
+</head>
+<body>
+  <h1>Execution Context Example</h1>
+
+  <script>
+    // Function to demonstrate execution context
+    function greet(name) {
+        document.write("Hello, " + name + "!");
+    }
+
+    // Global Execution Context
+    document.write("Global Execution Context");
+    greet("Alice"); // Output: Hello, Alice!
+
+    // Another Execution Context
+    function greetSomeone() {
+        document.write("Another Execution Context");
+      greet("Bob"); // Output: Hello, Bob!
+    }
+
+    greetSomeone();
+  </script>
+</body>
+</html>
