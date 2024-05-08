@@ -9,8 +9,10 @@ console.log ("2023010004");
 let buah;
 buah = "Buah Mangga";
 console.log (buah);
+
 var kendaraan = "motor";
 console.log (kendaraan);
+
 const z = "100";
 console.log (z);
 

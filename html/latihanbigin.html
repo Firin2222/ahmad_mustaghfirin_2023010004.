@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BigInt</title>
+</head>
+<body>
+<h1>BigInt</h1>
+<div id="result"></div>
+
+<script>
+  // Mendefinisikan variabel dengan tipe BigInt
+  const bigIntNumber = BigInt(Number.MAX_SAFE_INTEGER) + BigInt(1);
+
+  // Menampilkan nilai BigInt pada halaman web
+  document.getElementById("result").innerText = "Nilai BigInt: " + bigIntNumber.toString();
+</script>
+</body>
+</html>
