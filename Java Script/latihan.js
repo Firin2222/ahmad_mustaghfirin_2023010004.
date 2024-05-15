@@ -42,3 +42,12 @@ let aku = "makan";
 let moreaku = aku + aku ;
 console.log(moreaku);
 
+var x = -7
+console.log (x<6);
+console.log (x<5);
+console.log (x<-6);
+
+let hour = 11;
+if (hour < 10 || hour > 12) {
+    console.log ('warung masih tutup')
+}
